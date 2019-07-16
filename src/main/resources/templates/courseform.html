@@ -15,10 +15,10 @@
         <span th:if="${#fields.hasErrors('instructor')}" th:errors="*{instructor}"></span><br/>
 
         Description: <textarea rows="3" th:field="*{description}"/>
-        <span th:if="${#fields.hasErrors('description'}" th:errors="*{description}"></span><br/>
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span><br/>
 
         Credits: <input type="text" th:field="*{credit}"/>
-        <span th:if="${#fields.hasErrors('credit'}" th:errors="*{credit}"></span><br/>
+        <span th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></span><br/>
 
         <input type="submit" value="Submit"/>
     </form>

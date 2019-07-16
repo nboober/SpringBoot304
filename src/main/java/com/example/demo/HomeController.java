@@ -16,6 +16,12 @@ public class HomeController {
     @Autowired
     CourseRepository courseRepository;
 
+    @RequestMapping("/")
+    public String listCourse(Model model){
+        model.addAttribute("courses", courseRepository.findAll());
+        return "list";
+    }
+
     @RequestMapping("/add")
     public String listCourses(Model model){
         model.addAttribute("course", new Course());
@@ -40,6 +46,12 @@ public class HomeController {
     @RequestMapping("/update/{id}")
     public String updateCourse(@PathVariable("id") long id, Model model){
         model.addAttribute("course", courseRepository.findById(id).get());
+        return "courseform";
+    }
+
+    @RequestMapping("/delete/{id}")
+    public String delCourse(@PathVariable("id") long id){
+        courseRepository.deleteById(id);
         return "redirect:/";
     }
 
