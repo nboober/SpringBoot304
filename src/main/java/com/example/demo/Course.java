@@ -11,6 +11,8 @@ import javax.validation.constraints.Size;
 @Entity
 public class Course {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -30,6 +32,17 @@ public class Course {
     @NotNull
     @Min(3)
     private int credit;
+
+    public Course(){
+
+    }
+
+    public Course(String title, String instructor, String description, int credit) {
+        this.title=title;
+        this.instructor=instructor;
+        this.description=description;
+        this.credit=credit;
+    }
 
     public long getId() {
         return id;
